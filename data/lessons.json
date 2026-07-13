@@ -1,0 +1,186 @@
+[
+  {
+    "room": "Kitchen",
+    "room_image": "images/kitchen.png",
+    "next_room": "Living Room",
+    "opportunities": [
+      {
+        "item_key": "fridge",
+        "label": "Fridge",
+        "opportunity": "Optimize Fridge Temperature",
+        "description": "Slightly warmer fridge settings can reduce energy use while still keeping food safe.",
+        "impact": "0.10",
+        "hotspot": {
+          "left": "77%",
+          "top": "13%",
+          "width": "22%",
+          "height": "75%"
+        }
+      },
+      {
+        "item_key": "microwave",
+        "label": "Microwave",
+        "opportunity": "Unplug Phantoms",
+        "description": "Devices draw power even when \"off\"",
+        "impact": "0.15",
+        "hotspot": {
+          "left": "10%",
+          "top": "42%",
+          "width": "21%",
+          "height": "15%"
+        }
+      },
+      {
+        "item_key": "cooktop",
+        "label": "Gas cooktop",
+        "opportunity": "Induction Cooktop",
+        "description": "Switching from a gas cooktop to an induction cooktop eliminates gas combustion in the kitchen.",
+        "impact": "0.64",
+        "hotspot": {
+          "left": "31%",
+          "top": "50%",
+          "width": "20%",
+          "height": "16%"
+        }
+      }
+    ]
+  },
+  {
+    "room": "Living Room",
+    "room_image": "images/livingroom.png",
+    "next_room": "Bathroom",
+    "opportunities": [
+      {
+        "item_key": "thermostat",
+        "label": "Smart thermostat",
+        "opportunity": "Smart Thermostat",
+        "description": "Adjusts automatically when you're away or asleep",
+        "impact": "0.50",
+        "hotspot": {
+          "left": "1%",
+          "top": "34%",
+          "width": "8%",
+          "height": "9%"
+        }
+      },
+      {
+        "item_key": "curtains",
+        "label": "Curtains",
+        "opportunity": "Thermal Curtains",
+        "description": "Reduce heat transfer through glass",
+        "impact": "0.25",
+        "hotspot": {
+          "left": "29%",
+          "top": "12%",
+          "width": "36%",
+          "height": "38%"
+        }
+      },
+      {
+        "item_key": "light_bulbs",
+        "label": "Light bulbs",
+        "opportunity": "30 LED Light Bulbs",
+        "description": "75% less energy than incandescent light bulbs",
+        "impact": "1.80",
+        "hotspot": {
+          "left": "43%",
+          "top": "0%",
+          "width": "13%",
+          "height": "19%"
+        }
+      }
+    ]
+  },
+  {
+    "room": "Bathroom",
+    "room_image": "images/bathroom.png",
+    "next_room": "Laundry Room",
+    "opportunities": [
+      {
+        "item_key": "water_heater",
+        "label": "Water heater",
+        "opportunity": "Heat Pump Water Heater",
+        "description": "60% less electricity than a standard water heater",
+        "impact": "0.90",
+        "hotspot": {
+          "left": "51%",
+          "top": "8%",
+          "width": "16%",
+          "height": "34%"
+        }
+      },
+      {
+        "item_key": "showerhead",
+        "label": "Showerhead",
+        "opportunity": "Low Flow Showerheads",
+        "description": "less hot water used = less energy to heat it",
+        "impact": "0.15",
+        "hotspot": {
+          "left": "73%",
+          "top": "12%",
+          "width": "14%",
+          "height": "13%"
+        }
+      },
+      {
+        "item_key": "shower_controls",
+        "label": "Shower controls",
+        "opportunity": "5-Minute Shower Goal",
+        "description": "Hot water is the real cost of long showers",
+        "impact": "0.10",
+        "hotspot": {
+          "left": "80%",
+          "top": "44%",
+          "width": "10%",
+          "height": "17%"
+        }
+      }
+    ]
+  },
+  {
+    "room": "Laundry Room",
+    "room_image": "images/laundryroom.png",
+    "next_room": null,
+    "opportunities": [
+      {
+        "item_key": "washer",
+        "label": "Washer",
+        "opportunity": "Cold Water Wash",
+        "description": "90% of washing machine energy goes to heating water",
+        "impact": "0.10",
+        "hotspot": {
+          "left": "25%",
+          "top": "54%",
+          "width": "19%",
+          "height": "34%"
+        }
+      },
+      {
+        "item_key": "lint_filter",
+        "label": "Lint filter",
+        "opportunity": "Clean Lint Filter",
+        "description": "A clogged filter makes the dryer run longer",
+        "impact": "0.05",
+        "hotspot": {
+          "left": "63%",
+          "top": "44%",
+          "width": "7%",
+          "height": "9%"
+        }
+      },
+      {
+        "item_key": "dryer",
+        "label": "Dryer",
+        "opportunity": "Air Drying Rack",
+        "description": "Dryers are among the highest-energy appliances",
+        "impact": "1.00",
+        "hotspot": {
+          "left": "45%",
+          "top": "54%",
+          "width": "24%",
+          "height": "36%"
+        }
+      }
+    ]
+  }
+]

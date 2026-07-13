@@ -1,0 +1,75 @@
+$(document).ready(function () {
+    const opportunities = JSON.parse($("#room-opportunities-data").text());
+
+    // Apply hotspot positions from data attributes.
+    $(".hotspot").each(function () {
+        $(this).css({
+            left: $(this).data("left"),
+            top: $(this).data("top"),
+            width: $(this).data("width"),
+            height: $(this).data("height")
+        });
+    });
+
+    const clickedItems = new Set();
+    const totalHotspots = $(".hotspot").length;
+
+    $(".hotspot").on("click", function () {
+        const itemKey = $(this).data("item");
+
+        const itemData = opportunities.find(function (item) {
+            return item.item_key === itemKey;
+        });
+
+        if (!itemData) {
+            console.warn("No opportunity data found for:", itemKey);
+            return;
+        }
+
+        clickedItems.add(itemKey);
+        $(this).addClass("selected");
+
+        const existingRow = $(`#opportunity-table-body tr[data-item="${itemKey}"]`);
+
+        if (existingRow.length === 0) {
+            // Show the table the first time we add a row.
+            $("#opportunity-table").removeClass("d-none");
+
+            const newRow = `
+                <tr data-item="${itemKey}">
+                    <td>${itemData.opportunity}</td>
+                    <td>${itemData.description}</td>
+                    <td class="co2-data d-none">${itemData.impact}</td>
+                </tr>
+            `;
+
+            $("#opportunity-table-body").append(newRow);
+        }
+
+        // After all 3 hotspots are clicked, show the CO₂ reveal button.
+        if (clickedItems.size === totalHotspots) {
+            $("#show-co2-container").removeClass("d-none");
+        }
+    });
+
+    $("#show-co2-btn").on("click", function () {
+        // Reveal the CO₂ emissions reduction header and table cells.
+        $(".co2-data").removeClass("d-none");
+
+        // Hide the CO₂ reveal button.
+        $("#show-co2-container").addClass("d-none");
+
+        // Show the dynamic next-room / quiz button.
+        $("#next-room-container").removeClass("d-none");
+    });
+
+    $("#next-room-btn").on("click", function () {
+        const nextIndex = $(this).data("next-index");
+
+        if (nextIndex === null || nextIndex === undefined || nextIndex === "None") {
+            window.location.href = "/planner";
+        } else {
+            window.location.href = "/learn/" + nextIndex;
+        }
+    });
+});

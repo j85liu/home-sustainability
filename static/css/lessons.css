@@ -1,0 +1,298 @@
+/* ============================================================
+   Lesson / welcome pages (Bootstrap layout)
+   Keep visuals consistent with shared tokens in styles.css.
+   ============================================================ */
+
+.house-img{
+    max-width: 300px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+/* Ensure layout.html pages (which don't use .page-simple) still inherit
+   the same typography + base colors as the rest of the site.
+   Background is defined in styles.css (.learn-page). */
+.learn-page {
+    min-height: 100vh;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-dark);
+}
+
+.title{
+    color: var(--accent-dark);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.dark-grey {
+    color: #536067;
+}
+
+.centertext {
+  text-align: center;
+}
+
+.houseimg {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    max-height: 320px;
+}
+
+.welcome-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Welcome page only overrides (scoped to the #welcome-page wrapper). */
+#welcome-page .title {
+    color: var(--accent-dark);
+}
+
+#welcome-page .houseimg {
+    max-width: 520px;
+    max-height: 420px;
+}
+
+#welcome-page .welcome-buttons {
+    margin-top: 18px;
+    gap: 22px;
+}
+
+#welcome-page .welcome-button-width {
+    width: 240px;
+    min-height: 92px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Welcome page CTA buttons: green + maroon (scoped to this button row). */
+.welcome-buttons .btn.btn-primary {
+    background-color: var(--accent-green);
+    border-color: var(--accent-dark);
+}
+
+.welcome-buttons .btn.btn-primary:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.welcome-buttons .btn.btn-secondary {
+    background-color: var(--accent-maroon);
+    border-color: var(--accent-maroon);
+    color: #ffffff;
+}
+
+.welcome-buttons .btn.btn-secondary:hover {
+    filter: brightness(0.92);
+}
+
+.welcome-button-width{
+    width: 150px;
+    line-height: 1.2;
+}
+
+.lesson-buttons{
+    display: flex;
+    justify-content: center;
+}
+
+/* Lesson welcome CTA button color */
+.lesson-buttons .btn {
+    background-color: var(--accent-green);
+    border-color: var(--accent-dark);
+    color: #ffffff;
+}
+
+.lesson-buttons .btn:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: #ffffff;
+}
+
+.lesson-opportunity{
+    color: var(--accent-maroon);
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+/* Lesson page primary button color (e.g., "Show Impact") */
+.impact-opportunity .btn.btn-primary {
+    background-color: var(--accent-green);
+    border-color: var(--accent-dark);
+}
+
+.impact-opportunity .btn.btn-primary:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.lesson-progress {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0 30px 0;
+}
+
+.lesson-step {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(45, 52, 54, 0.12);
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    padding: 16px 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.lesson-step.active {
+    background-color: var(--accent-maroon);
+    border-color: var(--accent-maroon);
+    color: #ffffff;
+}
+
+/* Normalize Bootstrap success buttons to match the shared green token. */
+.learn-page .btn.btn-success,
+.learn-page .btn.btn-primary {
+    background-color: var(--accent-green);
+    border-color: var(--accent-dark);
+}
+
+.learn-page .btn.btn-success:hover,
+.learn-page .btn.btn-primary:hover {
+    background-color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.room-image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.room-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hotspot {
+    position: absolute;
+    background-color: rgba(255, 255, 0, 0);
+    border: 3px solid rgba(255, 215, 0, 0);
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border-radius: 8px;
+}
+
+.hotspot:hover {
+    background-color: rgba(255, 255, 0, 0.35);
+    border-color: rgba(255, 215, 0, 0.9);
+}
+
+.hotspot.selected {
+    background-color: rgba(255, 255, 0, 0.35);
+    border-color: rgba(255, 215, 0, 0.9);
+}
+
+/* Opportunity table */
+
+.opportunity-table {
+    width: 100%;
+    table-layout: fixed;
+    font-size: inherit;
+    line-height: 1.35;
+    background-color: #ffffff;
+    border: 1px solid var(--border-gray);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.opportunity-table th,
+.opportunity-table td {
+    vertical-align: middle;
+    border-color: rgba(45, 52, 54, 0.12) !important;
+}
+
+.opportunity-table.table-sm > :not(caption) > * > * {
+    padding: 0.75rem 0.8rem;
+}
+
+.opportunity-table thead th {
+    background-color: rgba(238, 241, 243, 0.96);
+    color: var(--accent-dark);
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    white-space: normal;
+    text-align: left;
+}
+
+.opportunity-table thead th:nth-child(1),
+.opportunity-table thead th:nth-child(2) {
+    white-space: nowrap;
+}
+
+.opportunity-table th:nth-child(1),
+.opportunity-table td:nth-child(1) {
+    width: 32%;
+    min-width: 150px;
+}
+
+.opportunity-table th:nth-child(2),
+.opportunity-table td:nth-child(2) {
+    width: 44%;
+}
+
+.opportunity-table th:nth-child(3),
+.opportunity-table td:nth-child(3) {
+    width: 24%;
+    min-width: 160px;
+}
+
+.opportunity-table tbody td {
+    text-align: left;
+}
+
+.opportunity-table tbody td:nth-child(2) {
+    overflow-wrap: anywhere;
+}
+
+.opportunity-table tbody td:nth-child(3) {
+    font-variant-numeric: tabular-nums;
+}
+
+.opportunity-table tbody td:first-child {
+    font-weight: 800;
+}
+
+.opportunity-table tbody tr:nth-child(even) {
+    background: rgba(238, 241, 243, 0.96);
+}
+
+/* Next room / quiz button */
+
+#next-room-btn {
+    width: 100%;
+}
+
+.cost-high {
+    color: green;
+    font-weight: bold;
+}
+
+.cost-medium {
+    color: goldenrod;
+    font-weight: bold;
+}
+
+.cost-low {
+    color: red;
+    font-weight: bold;
+}
